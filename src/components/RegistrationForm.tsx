@@ -6,7 +6,7 @@ import {
   Smartphone, FileImage
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-const qrCodeImage = "/src/assets/images/payment_qr_code.jpg";
+const qrCodeImage = "/src/assets/images/payment_qr_code.jpeg";
 
 interface RegistrationFormProps {
   onSuccess: (regId: string) => void;
@@ -227,7 +227,7 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
 
   // UPI deep link details for direct mobile payment
   const upiId = "9826354477@ybl"; // Default standard merchant or contact upi id
-  const upiUrl = `upi://pay?pa=${upiId}&pn=Ratlam%20Fun%20Run&am=99&cu=INR&tn=FunRun%20Registration`;
+  const upiUrl = `upi://pay?pa=${upiId}&pn=Ratlam%20Fun%20Run&am=149&cu=INR&tn=FunRun%20Registration`;
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8" id="form-container">
@@ -244,7 +244,7 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
           <div className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold transition-colors ${step === 2 ? "bg-orange-600 text-white" : "bg-gray-100 text-gray-400"}`}>
             2
           </div>
-          <span className={`text-sm font-semibold ${step === 2 ? "text-orange-600" : "text-gray-400"}`}>Payment (₹99)</span>
+          <span className={`text-sm font-semibold ${step === 2 ? "text-orange-600" : "text-gray-400"}`}>Payment (₹149)</span>
         </div>
       </div>
 
@@ -384,7 +384,7 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
                   id="btn-next-step"
                   className="w-full flex items-center justify-center gap-2 rounded-xl bg-orange-600 px-6 py-3.5 text-base font-bold text-white shadow-md hover:bg-orange-700 active:bg-orange-800 transition cursor-pointer"
                 >
-                  Proceed to Payment (₹99)
+                  Proceed to Payment (₹149)
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </div>
@@ -399,7 +399,7 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
             >
               <div>
                 <h2 className="text-xl font-bold text-gray-900 md:text-2xl">Pay & Upload Screenshot</h2>
-                <p className="text-sm text-gray-500 mt-1">Scan the QR code to pay ₹99, then upload your transaction receipt/screenshot.</p>
+                <p className="text-sm text-gray-500 mt-1">Scan the QR code to pay ₹149, then upload your transaction receipt/screenshot.</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
@@ -418,7 +418,7 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
                   <div className="text-center mt-3">
                     <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Official UPI Address</p>
                     <p className="text-sm font-bold text-gray-800 mt-0.5">{upiId}</p>
-                    <p className="text-xs text-orange-600 font-bold mt-1">Fee: ₹99.00</p>
+                    <p className="text-xs text-orange-600 font-bold mt-1">Fee: ₹149.00</p>
                   </div>
 
                   {/* Direct payment link for mobile users */}
@@ -442,7 +442,7 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
                     </div>
                     <div className="flex gap-2 items-start">
                       <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-orange-100 text-[10px] font-bold text-orange-600">2</span>
-                      <p>Scan this QR code and complete your ₹99 payment.</p>
+                      <p>Scan this QR code and complete your ₹149 payment.</p>
                     </div>
                     <div className="flex gap-2 items-start">
                       <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-orange-100 text-[10px] font-bold text-orange-600">3</span>

@@ -78,7 +78,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
             </div>
             <div className="text-left">
               <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Registration Fee</p>
-              <p className="text-sm font-bold text-orange-600">₹99 Only</p>
+              <p className="text-sm font-bold text-orange-600">₹149 Only</p>
             </div>
           </div>
         </motion.div>

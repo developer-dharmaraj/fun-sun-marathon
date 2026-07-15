@@ -86,7 +86,7 @@ export default function App() {
                       </div>
                       <div>
                         <p className="text-gray-400">Registration Fee:</p>
-                        <p className="font-bold text-gray-900">₹99.00 (Paid)</p>
+                        <p className="font-bold text-gray-900">₹149.00 (Paid)</p>
                       </div>
                       <div>
                         <p className="text-gray-400">Event Start:</p>
