@@ -1,12 +1,12 @@
 import React, { useState, useRef } from "react";
-import { 
-  User, Mail, Phone, Calendar as CalendarIcon, 
-  Users, Upload, CheckCircle, AlertCircle, 
+import {
+  User, Mail, Phone, Calendar as CalendarIcon,
+  Users, Upload, CheckCircle, AlertCircle,
   QrCode, ExternalLink, ArrowRight, ArrowLeft,
   Smartphone, FileImage
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-const qrCodeImage = "/src/assets/images/payment_qr_code.jpeg";
+const qrCodeImage = "/payment_qr_code.jpeg";
 
 interface RegistrationFormProps {
   onSuccess: (regId: string) => void;
@@ -30,12 +30,12 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
   const [screenshot, setScreenshot] = useState<string | null>(null);
   const [screenshotName, setScreenshotName] = useState<string>("");
   const [isDragging, setIsDragging] = useState(false);
-  
+
   // Validation, Loading & Error States
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [apiError, setApiError] = useState<string | null>(null);
-  
+
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Image compressor and converter
@@ -54,13 +54,13 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
         img.onload = () => {
           const canvas = document.createElement("canvas");
           const ctx = canvas.getContext("2d");
-          
+
           // Downscale to maximum 700px width/height to keep size small
           const MAX_WIDTH = 700;
           const MAX_HEIGHT = 700;
           let width = img.width;
           let height = img.height;
-          
+
           if (width > height) {
             if (width > MAX_WIDTH) {
               height *= MAX_WIDTH / width;
@@ -72,11 +72,11 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
               height = MAX_HEIGHT;
             }
           }
-          
+
           canvas.width = width;
           canvas.height = height;
           ctx?.drawImage(img, 0, 0, width, height);
-          
+
           // Compress quality to 70% JPEG
           const dataUrl = canvas.toDataURL("image/jpeg", 0.7);
           resolve(dataUrl);
@@ -91,7 +91,7 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
   const validateStep1 = () => {
     const newErrors: Record<string, string> = {};
     if (!formData.name.trim()) newErrors.name = "Full Name is required";
-    
+
     if (!formData.email.trim()) {
       newErrors.email = "Email address is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
@@ -406,14 +406,14 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
                 {/* QR Code Presentation */}
                 <div className="flex flex-col items-center bg-gray-50 rounded-2xl p-4 border border-gray-100">
                   <div className="relative group bg-white p-3 rounded-xl shadow-xs border border-orange-100">
-                    <img 
-                      src={qrCodeImage} 
-                      alt="Payment UPI QR Code" 
+                    <img
+                      src={qrCodeImage}
+                      alt="Payment UPI QR Code"
                       className="w-48 h-48 md:w-56 md:h-56 object-contain rounded-lg"
                     />
                     <div className="absolute inset-0 bg-black/5 rounded-lg pointer-events-none group-hover:bg-transparent transition" />
                   </div>
-                  
+
                   {/* UPI Details */}
                   <div className="text-center mt-3">
                     <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Official UPI Address</p>
@@ -461,13 +461,12 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
                       onDragLeave={handleDragLeave}
                       onDrop={handleDrop}
                       onClick={triggerFileSelect}
-                      className={`relative flex flex-col items-center justify-center rounded-2xl border-2 border-dashed p-6 text-center transition cursor-pointer ${
-                        isDragging 
-                          ? "border-orange-500 bg-orange-50/30" 
-                          : screenshot 
-                            ? "border-green-400 bg-green-50/10" 
+                      className={`relative flex flex-col items-center justify-center rounded-2xl border-2 border-dashed p-6 text-center transition cursor-pointer ${isDragging
+                          ? "border-orange-500 bg-orange-50/30"
+                          : screenshot
+                            ? "border-green-400 bg-green-50/10"
                             : "border-gray-300 hover:border-orange-400 hover:bg-gray-50/40"
-                      }`}
+                        }`}
                     >
                       <input
                         type="file"
