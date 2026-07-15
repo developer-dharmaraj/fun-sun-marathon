@@ -58,7 +58,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
             </div>
             <div className="text-left">
               <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Date & Time</p>
-              <p className="text-sm font-semibold text-gray-800">Sunday, Oct 18, 6:00 AM</p>
+              <p className="text-sm font-semibold text-gray-800">Sunday, July 19, 6:00 AM</p>
             </div>
           </div>
 
@@ -68,7 +68,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
             </div>
             <div className="text-left">
               <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Start Line</p>
-              <p className="text-sm font-semibold text-gray-800">Nehru Stadium, Ratlam</p>
+              <p className="text-sm font-semibold text-gray-800">House of Strength Gym, Ratlam</p>
             </div>
           </div>
 
@@ -78,7 +78,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
             </div>
             <div className="text-left">
               <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Registration Fee</p>
-              <p className="text-sm font-bold text-orange-600">₹149 Only</p>
+              <p className="text-sm font-bold text-orange-600">₹199 Only</p>
             </div>
           </div>
         </motion.div>
