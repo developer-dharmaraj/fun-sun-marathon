@@ -1,0 +1,6 @@
+{
+  "name": "Ratlam Fun Run Registration",
+  "description": "Official registration and payment portal for the Ratlam Fun Run event, featuring automated Google Sheets integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
