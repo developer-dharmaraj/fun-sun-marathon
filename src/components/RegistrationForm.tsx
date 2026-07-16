@@ -189,9 +189,10 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
     setStep(1);
   };
 
+  // RegistrationForm.tsx mein ye update karein:
   const handleSubmit = async () => {
     if (!screenshot) {
-      setApiError("Please make the payment and upload the transaction screenshot");
+      setApiError("Please upload the transaction screenshot");
       return;
     }
 
@@ -199,8 +200,13 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
     setApiError(null);
 
     try {
-      const response = await fetch("/api/register", {
+      // Apne Google Apps Script ka URL yahan rakhein
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzPj_CGYGzPZPG3AYtFGJas5qb2UWgl5kVxrl7G5W1NIJw3xBXk06K2HkakpomYfsYPtw/exec";
+
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
+        // Mode 'no-cors' use karna pad sakta hai agar CORS error aaye
+        mode: 'no-cors',
         headers: {
           "Content-Type": "application/json",
         },
@@ -210,16 +216,12 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
         }),
       });
 
-      const result = await response.json();
-
-      if (response.ok && result.success) {
-        onSuccess(result.registrationId);
-      } else {
-        setApiError(result.error || "Something went wrong. Please try again.");
-      }
-    } catch (err: any) {
+      // Note: no-cors mode mein response read nahi ho sakta, 
+      // isliye hum direct success maan lenge
+      onSuccess("Registration Successful");
+    } catch (err) {
       console.error("Submission failed:", err);
-      setApiError("Failed to reach server. Please check your network connection.");
+      setApiError("Failed to submit. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -462,10 +464,10 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
                       onDrop={handleDrop}
                       onClick={triggerFileSelect}
                       className={`relative flex flex-col items-center justify-center rounded-2xl border-2 border-dashed p-6 text-center transition cursor-pointer ${isDragging
-                          ? "border-orange-500 bg-orange-50/30"
-                          : screenshot
-                            ? "border-green-400 bg-green-50/10"
-                            : "border-gray-300 hover:border-orange-400 hover:bg-gray-50/40"
+                        ? "border-orange-500 bg-orange-50/30"
+                        : screenshot
+                          ? "border-green-400 bg-green-50/10"
+                          : "border-gray-300 hover:border-orange-400 hover:bg-gray-50/40"
                         }`}
                     >
                       <input
