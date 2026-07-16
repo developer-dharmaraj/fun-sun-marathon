@@ -138,7 +138,7 @@ export default function App() {
       {/* Footer */}
       <footer className="bg-white border-t border-gray-100 py-8 px-6 text-center text-xs text-gray-400 mt-auto">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <p>© 2026 Ratlam Fun Run. Built for karmyugtechzone@gmail.com. All rights reserved.</p>
+          <p>© 2026 Ratlam Fun Run. Built for Karmyug Techzone. All rights reserved.</p>
         </div>
       </footer>
     </div>

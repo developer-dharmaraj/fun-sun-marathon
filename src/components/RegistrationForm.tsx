@@ -226,7 +226,7 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
   };
 
   // UPI deep link details for direct mobile payment
-  const upiId = "9826354477@ybl"; // Default standard merchant or contact upi id
+  const upiId = "9691972515@upi"; // Default standard merchant or contact upi id
   const upiUrl = `upi://pay?pa=${upiId}&pn=Ratlam%20Fun%20Run&am=149&cu=INR&tn=FunRun%20Registration`;
 
   return (
