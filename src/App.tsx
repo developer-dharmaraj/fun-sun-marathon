@@ -86,7 +86,7 @@ export default function App() {
                       </div>
                       <div>
                         <p className="text-gray-400">Registration Fee:</p>
-                        <p className="font-bold text-gray-900">₹149.00 (Paid)</p>
+                        <p className="font-bold text-gray-900">₹199.00 (Paid)</p>
                       </div>
                       <div>
                         <p className="text-gray-400">Event Start:</p>
@@ -94,7 +94,7 @@ export default function App() {
                       </div>
                       <div>
                         <p className="text-gray-400">Venue Location:</p>
-                        <p className="font-semibold text-gray-900">Nehru Stadium, Ratlam</p>
+                        <p className="font-semibold text-gray-900">House of Strength Gym, Ratlam</p>
                       </div>
                     </div>
                   </div>
@@ -105,7 +105,6 @@ export default function App() {
                     <ol className="list-decimal list-inside space-y-1 text-gray-500">
                       <li>We will verify your uploaded UPI payment screenshot.</li>
                       <li>Your registration data is saved in real-time in the official Google Sheet database.</li>
-                      <li>You will receive your physical running Bib and T-shirt at Nehru Stadium entry desk on Oct 17.</li>
                     </ol>
                   </div>
 

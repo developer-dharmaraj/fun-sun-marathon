@@ -229,8 +229,7 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
 
   // UPI deep link details for direct mobile payment
   const upiId = "9691972515@upi"; // Default standard merchant or contact upi id
-  const upiUrl = `upi://pay?pa=${upiId}&pn=Ratlam%20Fun%20Run&am=149&cu=INR&tn=FunRun%20Registration`;
-
+  const upiUrl = `upi://pay?pa=${upiId}&pn=Ratlam%20Fun%20Run&am=149&cu=INR&tn=FunRun&mc=0000&mode=02`;
   return (
     <div className="mx-auto max-w-2xl px-4 py-8" id="form-container">
       {/* Step Indicator */}
