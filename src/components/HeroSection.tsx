@@ -58,7 +58,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
             </div>
             <div className="text-left">
               <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Date & Time</p>
-              <p className="text-sm font-semibold text-gray-800">Sunday, July 19, 6:00 AM</p>
+              <p className="text-sm font-semibold text-gray-800">Sunday, July 19, 7:00 AM</p>
             </div>
           </div>
 
